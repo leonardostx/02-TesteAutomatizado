@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://leonardostx.github.io/02-TesteAutomatizado/');
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).click();
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).fill('Ana');
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).fill('87');
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).fill('7');
+  await page.getByRole('spinbutton', { name: 'Nota 3' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 3' }).fill('9');
+  await page.getByRole('button', { name: 'Cadastrar' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).fill('8');
+  await page.getByRole('button', { name: 'Cadastrar' }).click();
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).click();
+  await page.getByRole('textbox', { name: 'Nome do Aluno' }).fill('Carlos Lima');
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 1' }).fill('5');
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 2' }).fill('4');
+  await page.getByRole('spinbutton', { name: 'Nota 3' }).click();
+  await page.getByRole('spinbutton', { name: 'Nota 3' }).fill('6');
+  await page.getByRole('button', { name: 'Cadastrar' }).click();
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).click();
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).fill('Ana');
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).press('Enter');
+  await page.getByRole('textbox', { name: 'Buscar por nome' }).fill('');
+  await page.getByRole('button', { name: 'Excluir Carlos Lima' }).click();
+});
